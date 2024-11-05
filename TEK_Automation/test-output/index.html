@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Master_Suite" class="navigator-link ">
-                    <span>C:\Users\rrkumar\eclipse-workspace\TEK_Automation\testng.xml</span>
+                    <span>C:\Users\rrkumar\git\repository\TEK_Automation\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Master_Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Master_Suite" title="testCases.CreateTalent" class="method navigator-link" hash-for-method="AddTalent">AddTalent</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Master_Suite" title="testCases.CreateTalent" class="method navigator-link" hash-for-method="validateConnectedTitle">validateConnectedTitle</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Master_Suite -->
@@ -118,11 +118,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Master_Suite" title="testCases.CreateTalent" class="method navigator-link" hash-for-method="SalesforceLogin">SalesforceLogin</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Master_Suite" title="testCases.CreateTalent" class="method navigator-link" hash-for-method="validateConnectedTitle">validateConnectedTitle</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Master_Suite -->
@@ -145,45 +140,13 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="AddTalent">
-                  </a> <!-- AddTalent -->
-                  <span class="method-name">AddTalent</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //a[@title=&apos;Find or Add Talent&apos;]&apos; (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at pageObjects.BasePage.waitForElementVisibility(BasePage.java:27)
-	at pageObjects.FindTalentPage.FindorAddTalent(FindTalentPage.java:68)
-	at testCases.CreateTalent.AddTalent(CreateTalent.java:49)
+                  <a name="validateConnectedTitle">
+                  </a> <!-- validateConnectedTitle -->
+                  <span class="method-name">validateConnectedTitle</span>
+                  <div class="stack-trace">java.lang.AssertionError: null
+	at testCases.CreateTalent.validateConnectedTitle(CreateTalent.java:52)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@title=&apos;Find or Add Talent&apos;]&quot;}
-  (Session info: chrome=130.0.6723.92)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.24.0&apos;, revision: &apos;748ffc9bc3&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2c26fb7268ae1529a19b26f9184cc15f, findElement {value=//a[@title=&apos;Find or Add Talent&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.92, chrome: {chromedriverVersion: 130.0.6723.91 (53ac07678369..., userDataDir: C:\Users\rrkumar\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64086}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64086/devtoo..., se:cdpVersion: 130.0.6723.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2c26fb7268ae1529a19b26f9184cc15f
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy32.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 31 more
-... Removed 32 stack frames
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -202,19 +165,12 @@ Session ID: 2c26fb7268ae1529a19b26f9184cc15f
                   <span class="method-name">SalesforceLogin</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="validateConnectedTitle">
-                  </a> <!-- validateConnectedTitle -->
-                  <span class="method-name">validateConnectedTitle</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Master_Suite-class-passed -->
         </div> <!-- panel Master_Suite -->
         <div panel-name="test-xml-Master_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\rrkumar\eclipse-workspace\TEK_Automation\testng.xml</span>
+            <span class="header-content">C:\Users\rrkumar\git\repository\TEK_Automation\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -266,10 +222,6 @@ Session ID: 2c26fb7268ae1529a19b26f9184cc15f
               <span class="test-group-name">Master</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">AddTalent</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
                 <span class="method-in-group-name">SalesforceLogin</span>
                 <br/>
               </div> <!-- method-in-group -->
@@ -282,10 +234,6 @@ Session ID: 2c26fb7268ae1529a19b26f9184cc15f
               <span class="test-group-name">Regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">AddTalent</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
                 <span class="method-in-group-name">SalesforceLogin</span>
                 <br/>
               </div> <!-- method-in-group -->
@@ -297,10 +245,6 @@ Session ID: 2c26fb7268ae1529a19b26f9184cc15f
             <div class="test-group">
               <span class="test-group-name">Sanity</span>
               <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">AddTalent</span>
-                <br/>
-              </div> <!-- method-in-group -->
               <div class="method-in-group">
                 <span class="method-in-group-name">SalesforceLogin</span>
                 <br/>
@@ -326,24 +270,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'AddTalent')
+data.setCell(0, 1, 'SalesforceLogin')
 data.setCell(0, 2, 'testCases.CreateTalent')
-data.setCell(0, 3, 60615);
+data.setCell(0, 3, 16225);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'SalesforceLogin')
+data.setCell(1, 1, 'validateConnectedTitle')
 data.setCell(1, 2, 'testCases.CreateTalent')
-data.setCell(1, 3, 10858);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'validateConnectedTitle')
-data.setCell(2, 2, 'testCases.CreateTalent')
-data.setCell(2, 3, 12);
+data.setCell(1, 3, 3654);
 window.suiteTableData['Master_Suite']= { tableData: data, tableDiv: 'times-div-Master_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 19 seconds</span>
               <div id="times-div-Master_Suite">
               </div> <!-- times-div-Master_Suite -->
             </div> <!-- times-div -->
@@ -375,22 +315,18 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <span class="method-name">SalesforceLogin</span>
+                <span class="method-start">4831 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">AddTalent</span>
-                <span class="method-start">3843 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">SalesforceLogin</span>
-                <span class="method-start">64670 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
                 <span class="method-name">validateConnectedTitle</span>
-                <span class="method-start">75530 ms</span>
+                <span class="method-start">21100 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">75544 ms</span>
+                <span class="method-start">24913 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -114,8 +114,8 @@ public class FindTalentPage extends BasePage {
 		Search.click();
 	}
 
-	public void AddTalentResume() {
-		AddTalentResume.click();
+	public WebElement AddTalentResume() {
+		return AddTalentResume;
 	}
 
 	public WebElement UploadFile() {
