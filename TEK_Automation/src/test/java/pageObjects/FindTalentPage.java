@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +17,7 @@ public class FindTalentPage extends BasePage {
 	WebElement FindorAddTalent;
 
 	@FindBy(xpath = "//div[contains(@class,'slds-size_1-of-5')][1]//label//following-sibling::input")
-	WebElement FirstName;
+	private WebElement FirstName;
 
 	@FindBy(xpath = "//div[contains(@class,'slds-size_1-of-5')][2]//label//following-sibling::input")
 	WebElement LastName;
@@ -61,21 +63,31 @@ public class FindTalentPage extends BasePage {
 
 	@FindBy(xpath = "//button[normalize-space()='Add a New Talent']")
 	WebElement AddNewTalent;
-
+	
+	@FindBy(xpath = "//input[@id='googleLookup_Add']")
+	private WebElement Location;
+	
+	@FindBy(xpath = "//span[contains(@class,'option-text_entity')]")
+	private List<WebElement> LocSugg;
+	
+	public void Location(String loc) {
+		 Location.sendKeys(loc);;
+	}
+	public List<WebElement> LocSugg() {
+		return LocSugg;
+	}
+	
 	public WebElement FindorAddTalent() {
-		// waitForElementPresence(FindorAddTalent);
-		// jsscroll(FindorAddTalent);
-		waitForElementVisibility(FindorAddTalent);
-		return waitForElementToBeClickable(FindorAddTalent);
+		return FindorAddTalent;
 
 	}
 
-	public void FirstName(String fname) {
-		FirstName.sendKeys(fname);
+	public WebElement FirstName() {
+		return FirstName;
 	}
 
-	public void LastName(String lname) {
-		LastName.sendKeys(lname);
+	public WebElement LastName() {
+		return LastName;
 	}
 
 	public void City(String city) {
@@ -110,8 +122,8 @@ public class FindTalentPage extends BasePage {
 		TalentId.sendKeys(talentId);
 	}
 
-	public void Search() {
-		Search.click();
+	public WebElement Search() {
+		return Search;
 	}
 
 	public WebElement AddTalentResume() {
@@ -122,12 +134,12 @@ public class FindTalentPage extends BasePage {
 		return UploadFile;
 	}
 
-	public void ResumeDoc() {
-		ResumeDoc.isDisplayed();
+	public boolean ResumeDoc() {
+		return ResumeDoc.isDisplayed();
 	}
 
-	public void Save() {
-		Save.click();
+	public WebElement Save() {
+		return Save;
 	}
 
 	public void AddNewTalent() {

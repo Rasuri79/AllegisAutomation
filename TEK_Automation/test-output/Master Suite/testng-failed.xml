@@ -15,7 +15,6 @@
     <classes>
       <class name="testCases.CreateTalent">
         <methods>
-          <include name="teardown"/>
           <include name="validateConnectedTitle"/>
           <include name="setup"/>
         </methods>

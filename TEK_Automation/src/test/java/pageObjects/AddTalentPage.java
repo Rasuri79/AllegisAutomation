@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,23 +17,23 @@ public class AddTalentPage extends BasePage {
 	private WebElement Location;
 	
 	@FindBy(xpath = "//span[contains(@class,'option-text_entity')]")
-	private WebElement LocSugg;
+	private List<WebElement> LocSugg;
 	
 	@FindBy(xpath = "//label[contains(@title,'Phone')]/following-sibling::div/input")
 	private WebElement Phone;
 	
 
 	@FindBy(xpath = "//input[@class='search-input']")
-	private WebElement Jobtitle;
+	 private WebElement Jobtitle;
 
 	@FindBy(xpath = "//li[contains(@class,'slds-p-left_small')]")
-	private WebElement JobSugg;
+	private List<WebElement> JobSugg;
 
 	@FindBy(xpath = "//div[contains(@class,'1-of-2')]/div[3]//input")
 	private WebElement Skillinput;
 
 	@FindBy(xpath = "//div[contains(@class,'slds-is-open')]//ul/li")
-	private WebElement SkillSugg;
+	private List<WebElement> SkillSugg;
 
 	
 	@FindBy(xpath = "//div[@class='slds-col'][2]//span[normalize-space()='Save']")
@@ -42,25 +44,25 @@ public class AddTalentPage extends BasePage {
 	@FindBy(xpath = "//span[normalize-space()='Find or Add Talent']")
 	private WebElement FindorAddTalent;
 
-	public void Location(String loc) {
-		Location.sendKeys(loc);
+	public WebElement Location() {
+		return Location;
 	}
-	public WebElement LocSugg() {
+	public List<WebElement> LocSugg() {
 		return LocSugg;
 	}
 	public void Phone(String phone) {
 		Phone.sendKeys(phone);
 	}
-	public void Jobtitle(String jobtitle) {
-		Jobtitle.sendKeys(jobtitle);
+	public WebElement Jobtitle() {
+		return Jobtitle;
 	}
-	public WebElement JobSugg() {
+	public List<WebElement> JobSugg() {
 		return JobSugg;
 	}
 	public void Skillinput(String skillinput) {
 		Skillinput.sendKeys(skillinput);
 	}
-	public WebElement SkillSugg() {
+	public List<WebElement> SkillSugg() {
 		return SkillSugg;
 	}
 	public void Save() {

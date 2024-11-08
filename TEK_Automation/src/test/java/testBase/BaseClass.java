@@ -31,10 +31,13 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+import pageObjects.AddTalentPage;
 import pageObjects.FindTalentPage;
 import pageObjects.LoginPage;
 
@@ -45,16 +48,8 @@ public class BaseClass {
 	public static WebDriver driver;
 	public FindTalentPage Fp;
 	public LoginPage Lp;
-
-	// Set WebDriver (used for initializing the driver in tests)
-	public static void setDriver(WebDriver driver) {
-		BaseClass.driver = driver;
-	}
-
-	// Get WebDriver (used for retrieving the driver instance)
-	public static WebDriver getDriver() {
-		return driver;
-	}
+	public AddTalentPage Ap;
+	public WebDriverWait wait;
 
 	@BeforeClass(groups = { "Sanity", "Master", "Regression" })
 	@Parameters({ "browser" }) // values comming from parameters in testng.xml
@@ -78,7 +73,7 @@ public class BaseClass {
 			Chroptions.setExperimentalOption("prefs", prefs);
 			// Exclude the 'enable-automation' switch to prevent detection
 			Chroptions.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
-             // Add more options if necessary
+			// Add more options if necessary
 			Chroptions.addArguments("--disable-blink-features=AutomationControlled"); // Prevents detection of WebDriver
 			// Chroptions.addArguments("--disable-notifications");
 			driver = new ChromeDriver(Chroptions);
@@ -98,22 +93,71 @@ public class BaseClass {
 			return;
 		}
 		// Set the WebDriver instance using the setDriver method
-		setDriver(driver);
-
+//		setDriver(driver);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(100)); // 40 seconds wait
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 		driver.get(p.getProperty("appURL")); // reading URL from config properties file
 		driver.manage().window().maximize();
 		Lp = new LoginPage(driver); // Initialize your page objects
 		Fp = new FindTalentPage(driver);
+		
 
 	}
 
-	@AfterClass(groups = { "Sanity", "Master", "Regression" })
-	public void teardown() {
-		if (driver != null) {
-			driver.quit(); // Quit the WebDriver
-		}
+//	@AfterClass(groups = { "Sanity", "Master", "Regression" })
+//	public void teardown() {
+//		if (driver != null) {
+//			driver.quit(); // Quit the WebDriver
+//		}
+//	}
+
+	// Click an element using a WebElement
+	public void click(WebElement element) {
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+	}
+
+	// Click an element using a WebElement
+	public void jsclick(WebElement element) {
+
+		scrollToElement(element); // Scroll to the element before clicking
+		jsclickElement(element);
+	}
+
+	public void inputTextToElement(WebElement element, String text) {
+		// wait.until(ExpectedConditions.visibilityOf(element));
+		// element.clear();
+		element.sendKeys(text);
+	}
+
+	// Send keys to a WebElement
+	public void jssendKeys(WebElement element, String text) {
+		wait.until(ExpectedConditions.visibilityOf(element));
+		scrollToElement(element); // Scroll to the element before sending keys
+		element.clear();
+		sendKeysUsingJavaScript(element, text);
+	}
+
+	// Scroll to the element using JavaScript
+	public void scrollToElement(WebElement element) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+
+	public void jsclickElement(WebElement element) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		wait.until(ExpectedConditions.visibilityOf(element));
+		jsExecutor.executeScript("arguments[0].click();", element);
+
+	}
+
+	public static void sendKeysUsingJavaScript(WebElement element, String text) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		// JavaScript code to set the value of the input field
+
+		js.executeScript("arguments[0].value = arguments[1];", element, text); // Execute JavaScript
 	}
 
 	public String getrandomString(int n) {
@@ -158,20 +202,19 @@ public class BaseClass {
 
 	}
 
-	public void jsclick(WebElement eleLocator) {
+	public void jsscroll(WebElement eleLocator) {
 		// this.driver = driver;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		// Scroll the element into view
 		js.executeScript("arguments[0].scrollIntoView(true);", eleLocator);
 		// Click the element
-		js.executeScript("arguments[0].click();", eleLocator);
 
 	}
 
 	// Method to upload a file using the Robot class
-	public void uploadFile(WebElement fileloader, String filePath) throws AWTException {
+	public void uploadFile(String filePath) throws AWTException {
 		// Click the upload button
-		fileloader.click();
+		// fileloader.click();
 
 		// Create a Robot instance
 		Robot robot = new Robot();
