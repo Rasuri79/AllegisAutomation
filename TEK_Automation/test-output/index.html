@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Master_Suite" class="navigator-link">
-              <span class="suite-name border-failed">Master Suite</span>
+              <span class="suite-name border-passed">Master Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Master_Suite" class="hide-methods failed suite-Master_Suite"> (hide)</a> <!-- hide-methods failed suite-Master_Suite -->
-                      <a href="#" panel-name="suite-Master_Suite" class="show-methods failed suite-Master_Suite"> (show)</a> <!-- show-methods failed suite-Master_Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Master_Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Master_Suite" title="testCases.CreateTalent" class="method navigator-link" hash-for-method="validateConnectedTitle">validateConnectedTitle</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Master_Suite -->
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -115,6 +101,16 @@
                       <a href="#" panel-name="suite-Master_Suite" class="show-methods passed suite-Master_Suite"> (show)</a> <!-- show-methods passed suite-Master_Suite -->
                     </span>
                     <div class="method-list-content passed suite-Master_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Master_Suite" title="testCases.CreateTalent" class="method navigator-link" hash-for-method="CreateTalent">CreateTalent</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Master_Suite" title="testCases.CreateTalent" class="method navigator-link" hash-for-method="EditTalent">EditTalent</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Master_Suite" title="testCases.CreateTalent" class="method navigator-link" hash-for-method="SalesforceLogin">SalesforceLogin</a> <!-- method navigator-link -->
@@ -132,32 +128,26 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Master_Suite" class="panel Master_Suite">
-          <div class="suite-Master_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">testCases.CreateTalent</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="validateConnectedTitle">
-                  </a> <!-- validateConnectedTitle -->
-                  <span class="method-name">validateConnectedTitle</span>
-                  <div class="stack-trace">java.lang.AssertionError: null
-	at testCases.CreateTalent.validateConnectedTitle(CreateTalent.java:79)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Master_Suite-class-failed -->
           <div class="suite-Master_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">testCases.CreateTalent</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CreateTalent">
+                  </a> <!-- CreateTalent -->
+                  <span class="method-name">CreateTalent</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="EditTalent">
+                  </a> <!-- EditTalent -->
+                  <span class="method-name">EditTalent</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="SalesforceLogin">
@@ -222,11 +212,15 @@
               <span class="test-group-name">Master</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">SalesforceLogin</span>
+                <span class="method-in-group-name">CreateTalent</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">validateConnectedTitle</span>
+                <span class="method-in-group-name">EditTalent</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">SalesforceLogin</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -234,11 +228,15 @@
               <span class="test-group-name">Regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">SalesforceLogin</span>
+                <span class="method-in-group-name">CreateTalent</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">validateConnectedTitle</span>
+                <span class="method-in-group-name">EditTalent</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">SalesforceLogin</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -246,11 +244,15 @@
               <span class="test-group-name">Sanity</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">SalesforceLogin</span>
+                <span class="method-in-group-name">CreateTalent</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">validateConnectedTitle</span>
+                <span class="method-in-group-name">EditTalent</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">SalesforceLogin</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -270,15 +272,19 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'validateConnectedTitle')
+data.setCell(0, 1, 'CreateTalent')
 data.setCell(0, 2, 'testCases.CreateTalent')
-data.setCell(0, 3, 97609);
+data.setCell(0, 3, 83980);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'SalesforceLogin')
 data.setCell(1, 2, 'testCases.CreateTalent')
-data.setCell(1, 3, 21043);
+data.setCell(1, 3, 20529);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'EditTalent')
+data.setCell(2, 2, 'testCases.CreateTalent')
+data.setCell(2, 3, 4);
 window.suiteTableData['Master_Suite']= { tableData: data, tableDiv: 'times-div-Master_Suite'}
 return data;
 }
@@ -316,14 +322,20 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">SalesforceLogin</span>
-                <span class="method-start">4651 ms</span>
+                <span class="method-start">4230 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">validateConnectedTitle</span>
-                <span class="method-start">25729 ms</span>
+                <span class="method-name">CreateTalent</span>
+                <span class="method-start">24875 ms</span>
               </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">EditTalent</span>
+                <span class="method-start">108863 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">108876 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

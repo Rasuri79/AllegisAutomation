@@ -10,7 +10,7 @@ public class AddTalentPage extends BasePage {
 
 	public AddTalentPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	@FindBy(xpath = "//input[@id='googleLookup_Add']")
@@ -41,11 +41,11 @@ public class AddTalentPage extends BasePage {
 
 	
 	
-	@FindBy(xpath = "//span[normalize-space()='Find or Add Talent']")
-	private WebElement FindorAddTalent;
+	@FindBy(xpath = "//div[@class='toastTitle slds-text-heading--small']")
+	private WebElement ToastMsg;
 
-	public WebElement Location() {
-		return Location;
+	public void Location(String loc) {
+		Location.sendKeys(loc);
 	}
 	public List<WebElement> LocSugg() {
 		return LocSugg;
@@ -53,22 +53,25 @@ public class AddTalentPage extends BasePage {
 	public void Phone(String phone) {
 		Phone.sendKeys(phone);
 	}
-	public WebElement Jobtitle() {
-		return Jobtitle;
+	public void Jobtitle(String title) {
+		 Jobtitle.sendKeys(title);
 	}
 	public List<WebElement> JobSugg() {
 		return JobSugg;
 	}
 	public void Skillinput(String skillinput) {
+		Skillinput.clear();
 		Skillinput.sendKeys(skillinput);
 	}
 	public List<WebElement> SkillSugg() {
 		return SkillSugg;
 	}
-	public void Save() {
-		Save.click();
+	public WebElement Save() {
+	   return 	Save;
 	}
-	
+	public WebElement ToastMsg() {
+		   return 	ToastMsg;
+		}
 	
 	
 }

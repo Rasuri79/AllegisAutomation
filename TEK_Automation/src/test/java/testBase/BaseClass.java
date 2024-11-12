@@ -16,6 +16,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -97,27 +99,23 @@ public class BaseClass {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(100)); // 40 seconds wait
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+
 		driver.get(p.getProperty("appURL")); // reading URL from config properties file
 		driver.manage().window().maximize();
 		Lp = new LoginPage(driver); // Initialize your page objects
 		Fp = new FindTalentPage(driver);
-		
+		Ap = new AddTalentPage(driver);
 
 	}
 
-//	@AfterClass(groups = { "Sanity", "Master", "Regression" })
-//	public void teardown() {
-//		if (driver != null) {
-//			driver.quit(); // Quit the WebDriver
-//		}
-//	}
-
-	// Click an element using a WebElement
-	public void click(WebElement element) {
-		wait.until(ExpectedConditions.elementToBeClickable(element));
-		element.click();
+	@AfterClass(groups = { "Sanity", "Master", "Regression" })
+	public void teardown() {
+		if (driver != null) {
+			driver.quit(); // Quit the WebDriver
+		}
 	}
 
+	
 	// Click an element using a WebElement
 	public void jsclick(WebElement element) {
 
@@ -142,13 +140,13 @@ public class BaseClass {
 	// Scroll to the element using JavaScript
 	public void scrollToElement(WebElement element) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		wait.until(ExpectedConditions.elementToBeClickable(element));
+		//wait.until(ExpectedConditions.elementToBeClickable(element));
 		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
 	public void jsclickElement(WebElement element) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		wait.until(ExpectedConditions.visibilityOf(element));
+		
 		jsExecutor.executeScript("arguments[0].click();", element);
 
 	}
@@ -160,6 +158,47 @@ public class BaseClass {
 		js.executeScript("arguments[0].value = arguments[1];", element, text); // Execute JavaScript
 	}
 
+	public void clickButton(WebElement buttonLocator ) {
+       
+        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(buttonLocator));
+        button.click();
+    }
+
+//    // Method to get an element's visibility
+//    public boolean isElementVisible(WebElement elevisible) {
+//       
+//        try {
+//            WebElement element = wait.until(ExpectedConditions.visibilityOf(elevisible));
+//            return element.isDisplayed();
+//        } catch (TimeoutException e) {
+//            return false;
+//        }
+//    }
+
+//    // Method to check presence of an element in the DOM
+//    public boolean isElementPresent(WebElement elementloc) {
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        try {
+//            WebElement element = wait.until(ExpectedConditions.(elementloc));
+//            return element != null;
+//        } catch (TimeoutException e) {
+//            return false;
+//        }
+//    }
+
+    // Method to handle alert presence
+//    public void handleAlert() {
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        try {
+//            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+//            alert.accept();  // Accept the alert
+//        } catch (TimeoutException e) {
+//            System.out.println("No alert present.");
+//        }
+//    }
+
+	
+	
 	public String getrandomString(int n) {
 
 		return RandomStringUtils.randomAlphabetic(n);
@@ -202,19 +241,11 @@ public class BaseClass {
 
 	}
 
-	public void jsscroll(WebElement eleLocator) {
-		// this.driver = driver;
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		// Scroll the element into view
-		js.executeScript("arguments[0].scrollIntoView(true);", eleLocator);
-		// Click the element
-
-	}
+	
 
 	// Method to upload a file using the Robot class
 	public void uploadFile(String filePath) throws AWTException {
-		// Click the upload button
-		// fileloader.click();
+		
 
 		// Create a Robot instance
 		Robot robot = new Robot();
@@ -232,6 +263,36 @@ public class BaseClass {
 		// Press Enter to confirm the file selection
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
+	}
+	
+	
+	public boolean isDisplayed(WebElement element, int duration) {
+        boolean flag = false;
+        try {
+            // Explicit wait for the element to be visible
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(duration));
+            wait.until(ExpectedConditions.visibilityOf(element));  // Wait until element is visible
+            flag = true;  // Element is visible
+        } catch (Exception e) {
+            // Log failure message if element is not visible
+            logger.info("Element not visible after " + duration + " seconds: " + element.toString());
+        }
+        return flag;
+    }
+	
+	public void enterTextIfEmpty(WebElement element,String text) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.visibilityOf(element));
+
+	    String currentText = element.getAttribute("value");
+
+	    if (currentText == null || currentText.trim().isEmpty()) {
+	    	element.sendKeys(text);
+	    } else {
+	        // Optionally, clear the field before entering new text
+	    	element.clear();  // Clears the input field
+	    	element.sendKeys(text);  // Send the new text
+	    }
 	}
 
 }

@@ -10,59 +10,59 @@ public class FindTalentPage extends BasePage {
 
 	public FindTalentPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@FindBy(xpath = "//a[@title='Find or Add Talent']")
-	WebElement FindorAddTalent;
+	private WebElement FindorAddTalent;
 
 	@FindBy(xpath = "//div[contains(@class,'slds-size_1-of-5')][1]//label//following-sibling::input")
 	private WebElement FirstName;
 
 	@FindBy(xpath = "//div[contains(@class,'slds-size_1-of-5')][2]//label//following-sibling::input")
-	WebElement LastName;
+	private WebElement LastName;
 
 	@FindBy(xpath = "//div[contains(@class,'slds-size_1-of-5')][3]//label//following-sibling::input")
-	WebElement City;
+	private WebElement City;
 
 	@FindBy(xpath = "(//div[@role='listbox'])[1]/preceding-sibling::div")
-	WebElement State;
+	private WebElement State;
 
 	@FindBy(xpath = "(//div[@role='listbox'])[2]/preceding-sibling::div")
-	WebElement Country;
+	private WebElement Country;
 
 	@FindBy(xpath = "//div[contains(@class,'slds-size_1-of-5')][6]//label//following-sibling::input")
-	WebElement Postalcode;
+	private WebElement Postalcode;
 
 	@FindBy(xpath = "//div[contains(@class,'slds-size_1-of-5')][7]//label//following-sibling::input")
-	WebElement Phone;
+	private WebElement Phone;
 
 	@FindBy(xpath = "//div[contains(@class,'slds-size_1-of-5')][7]//label//following-sibling::input")
-	WebElement Email;
+	private WebElement Email;
 
 	@FindBy(xpath = "//div[contains(@class,'slds-size_1-of-5')][7]//label//following-sibling::input")
-	WebElement PreferredFirstName;
+	private WebElement PreferredFirstName;
 
 	@FindBy(xpath = "//div[contains(@class,'slds-size_1-of-5')][7]//label//following-sibling::input")
-	WebElement TalentId;
+	private WebElement TalentId;
 
 	@FindBy(xpath = "//button[@title='Search']")
-	WebElement Search;
+	private WebElement Search;
 
 	@FindBy(xpath = "//div[@class='vp-width'][1]//*[name()='svg']")
-	WebElement AddTalentResume;
+	private WebElement AddTalentResume;
 
 	@FindBy(xpath = "(//*[name()='svg'][@class='slds-button__icon slds-button__icon_left'])[3]")
-	WebElement UploadFile;
+	private WebElement UploadFile;
 
 	@FindBy(xpath = "(//span[@class='slds-form-element__label slds-m-left_medium'])[1]")
-	WebElement ResumeDoc;
+	private WebElement ResumeDoc;
 
 	@FindBy(xpath = "//span[normalize-space()='Save']")
-	WebElement Save;
+	private WebElement Save;
 
 	@FindBy(xpath = "//button[normalize-space()='Add a New Talent']")
-	WebElement AddNewTalent;
+	private WebElement AddNewTalent;
 	
 	@FindBy(xpath = "//input[@id='googleLookup_Add']")
 	private WebElement Location;
@@ -70,8 +70,14 @@ public class FindTalentPage extends BasePage {
 	@FindBy(xpath = "//span[contains(@class,'option-text_entity')]")
 	private List<WebElement> LocSugg;
 	
+	@FindBy(xpath = "//input[@class='search-input']")
+	private WebElement Jobtitle;
+
+	@FindBy(xpath = "//li[contains(@class,'slds-p-left_small')]")
+	private List<WebElement> JobSugg;
+	
 	public void Location(String loc) {
-		 Location.sendKeys(loc);;
+		 Location.sendKeys(loc);
 	}
 	public List<WebElement> LocSugg() {
 		return LocSugg;
@@ -82,12 +88,12 @@ public class FindTalentPage extends BasePage {
 
 	}
 
-	public WebElement FirstName() {
-		return FirstName;
+	public void FirstName(String fname) {
+	 FirstName.sendKeys(fname);
 	}
 
-	public WebElement LastName() {
-		return LastName;
+	public void LastName(String lname) {
+		LastName.sendKeys(lname);
 	}
 
 	public void City(String city) {
@@ -122,8 +128,8 @@ public class FindTalentPage extends BasePage {
 		TalentId.sendKeys(talentId);
 	}
 
-	public WebElement Search() {
-		return Search;
+	public void Search() {
+		 Search.click();
 	}
 
 	public WebElement AddTalentResume() {
@@ -131,14 +137,17 @@ public class FindTalentPage extends BasePage {
 	}
 
 	public WebElement UploadFile() {
-		return UploadFile;
+	 //UploadFile.click();
+	 return UploadFile;
+	 
 	}
 
-	public boolean ResumeDoc() {
-		return ResumeDoc.isDisplayed();
+	public String ResumeDoc() {
+		return ResumeDoc.getText();
 	}
 
 	public WebElement Save() {
+		//Save.click();
 		return Save;
 	}
 
@@ -149,6 +158,13 @@ public class FindTalentPage extends BasePage {
 
 	public String FindTalentPageTitle() {
 		return driver.getTitle();
+	}
+	
+	public void Jobtitle(String title) {
+		 Jobtitle.sendKeys(title);
+	}
+	public List<WebElement> JobSugg() {
+		return JobSugg;
 	}
 
 }
