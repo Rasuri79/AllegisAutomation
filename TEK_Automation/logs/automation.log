@@ -1,0 +1,20 @@
+14:15:22.795 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\rrkumar\git\repository\TEK_Automation\load.xml"
+14:15:23.097 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\rrkumar\git\repository\TEK_Automation\load.xml
+
+14:15:27.902 [main] INFO  testCases.loadCreateTalent - SalesforceLogin Test case started 
+14:15:30.627 [main] INFO  testCases.loadCreateTalent - Logged in to connected
+14:15:30.627 [main] INFO  testCases.loadCreateTalent - SalesforceLogin Test case executed 
+14:15:30.652 [main] INFO  testCases.loadCreateTalent - Talentcreation testcase started
+14:16:09.257 [main] INFO  testCases.loadCreateTalent - Element not visible after 5 seconds: [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: (//*[name()='svg'][@class='slds-button__icon slds-button__icon_left'])[3]]
+14:16:14.676 [main] INFO  testCases.loadCreateTalent - 
+14:17:29.197 [main] INFO  testCases.loadCreateTalent - Success!
+14:17:29.197 [main] INFO  testCases.loadCreateTalent -  Talentcreation Test Case Finished
+14:17:29.201 [main] INFO  testCases.loadCreateTalent -  EditTalent test case is started
+14:17:37.419 [main] INFO  testCases.loadCreateTalent - [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: //div[contains(@class,'1-of-4')][1]//div[contains(@class,'1-of-2')][1]//input] has  text 
+14:17:37.523 [main] INFO  testCases.loadCreateTalent - [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: //div[contains(@class,'1-of-4')][1]//div[contains(@class,'1-of-2')][2]//input] has  text 
+14:17:37.791 [main] INFO  testCases.loadCreateTalent - [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: //span[normalize-space()='email']/ancestor::label/following-sibling::input] has  text 
+14:17:37.887 [main] INFO  testCases.loadCreateTalent - [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: //input[@class='search-input']] has  text 
+14:17:37.955 [main] INFO  testCases.loadCreateTalent - [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: //input[contains(@class,'mixedCase search-req-field')]] has  text 
+14:17:39.486 [main] INFO  testCases.loadCreateTalent - [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: //div[contains(@class,'2')][2]//div[contains(@class,'1')][1]//div[2]//input] has  text 
+14:17:39.994 [main] INFO  testCases.loadCreateTalent -  EditTalent Test Case Finished
