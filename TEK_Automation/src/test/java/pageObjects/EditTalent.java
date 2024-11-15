@@ -87,93 +87,94 @@ public class EditTalent extends BasePage {
 	
 	@FindBy(xpath = "//div[contains(@class,'G2')]//textarea")
 	private WebElement G2Comments;
+	
 	@FindBy(xpath = "//button[contains(text(),'Save')]")
 	private WebElement EditSave;
 	
-	public void FirstName(String fname) {
-		FirstName.sendKeys(fname);;
+	public WebElement FirstName() {
+		return FirstName;
 	}
-	public void LastName(String lname) {
-		LastName.sendKeys(lname);
+	public WebElement LastName() {
+		return LastName;
 	}
-	public void Location(String loc) {
-		Location.sendKeys(loc);
+	public WebElement Location() {
+		return Location;
 	}
-	public void MobilePhone(String phone) {
-		MobilePhone.sendKeys(phone);
+	public WebElement MobilePhone() {
+		return MobilePhone;
 	}
-	public void Email(String email) {
-		Email.sendKeys(email);
+	public WebElement Email() {
+		return Email;
 	}
-	public void JobTitle(String title) {
-		JobTitle.sendKeys(title);
+	public WebElement JobTitle() {
+		return JobTitle;
 	}
-	public void CurrentCompany(String company) {
-		CurrentCompany.sendKeys(company);
+	public WebElement CurrentCompany() {
+		return CurrentCompany;
 	}
-	public void SkillComments(String comments) {
-		SkillComments.sendKeys(comments);
+	public WebElement SkillComments() {
+		 return SkillComments;
 	}
-	public void Goals_Interests(String Goal) {
-		Goals_Interests.sendKeys(Goal);
+	public WebElement Goals_Interests() {
+		 return Goals_Interests;
 	}
-	public void Skills(String skill) {
-		Skills.sendKeys(skill);
+	public WebElement Skills() {
+		return  Skills;
 	}
-	public void PlacementType(String placeType) {
-		PlacementType.sendKeys(placeType);
+	public WebElement PlacementType() {
+		return  PlacementType;
 	}
-	public void Schedule(String schedule) {
-		Schedule.sendKeys(schedule);
+	public WebElement Schedule() {
+		return Schedule;
 	}
-	public void WorkPlaceType(String WorkType) {
-		WorkPlaceType.sendKeys(WorkType);
+	public WebElement WorkPlaceType() {
+		return WorkPlaceType;
 	}
-	public void PreRateLow(String RateLow) {
-		PreRateLow.sendKeys(RateLow);
+	public WebElement PreRateLow() {
+		return PreRateLow;
 	}
-	public void PreRateHigh(String RateHigh) {
-		PreRateHigh.sendKeys(RateHigh);
+	public WebElement PreRateHigh() {
+		return PreRateHigh;
 	}
-	public void PreSalLow(String SalLow) {
-		PreSalLow.sendKeys(SalLow);
+	public WebElement PreSalLow() {
+		return PreSalLow;
 	}
-	public void PreSalHigh(String SalHigh) {
-		PreSalHigh.sendKeys(SalHigh);
+	public WebElement PreSalHigh() {
+		return PreSalHigh;
 	}
-	public void Frequency(String freq) {
-		Frequency.sendKeys(freq);
+	public WebElement Frequency() {
+		return Frequency;
 	}
 	
 	
-	public void Currency(String Curr) {
-		Currency.sendKeys(Curr);
+	public WebElement Currency() {
+		return Currency;
 	}
-	public void BonusAmt(String Bonus) {
-		BonusAmt.sendKeys(Bonus);
+	public WebElement BonusAmt() {
+		return BonusAmt;
 	}
-	public void AddCompensation(String Compen) {
-		AddCompensation.sendKeys(Compen);
+	public WebElement AddCompensation() {
+		return AddCompensation;
 	}
 	public void BonusPerc(String bonusPerc) {
 		BonusPerc.sendKeys(bonusPerc);
 	}
 	
-	public void Country(String country) {
-		Country.sendKeys(country);
+	public WebElement Country() {
+		return Country;
 	}
-	public void State(String state) {
-		State.sendKeys(state);
+	public WebElement State() {
+		return State;
 	}
-	public void City(String city) {
-		City.sendKeys(city);
+	public WebElement City() {
+		return City;
 	}
-	public void G2Comments(String G2Comm) {
-		G2Comments.sendKeys(G2Comm);
+	public WebElement G2Comments() {
+		return G2Comments;
 	}
 	
-	public void EditSave(String Save) {
-		EditSave.click();
+	public WebElement EditSave() {
+		return EditSave;
 	}
 	
 	

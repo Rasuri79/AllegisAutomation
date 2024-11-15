@@ -35,15 +35,16 @@ public class AddTalentPage extends BasePage {
 	@FindBy(xpath = "//div[contains(@class,'slds-is-open')]//ul/li")
 	private List<WebElement> SkillSugg;
 
-	
 	@FindBy(xpath = "//div[@class='slds-col'][2]//span[normalize-space()='Save']")
 	private WebElement Save;
 
-	
-	
 	@FindBy(xpath = "//div[@class='toastTitle slds-text-heading--small']")
 	private WebElement ToastMsg;
-
+	
+	@FindBy(xpath = "//button[contains(text(),'Edit')]")
+	private WebElement Editbtn;
+	
+	
 	public void Location(String loc) {
 		Location.sendKeys(loc);
 	}
@@ -73,5 +74,7 @@ public class AddTalentPage extends BasePage {
 		   return 	ToastMsg;
 		}
 	
-	
+	public WebElement Editbtn() {
+		return Editbtn;
+	}
 }

@@ -21,7 +21,7 @@ public class CreateTalent extends BaseClass {
 
 	String filepath = "C:\\Users\\rrkumar\\Downloads\\Elton_Odonnell.pdf";
 	String SuccessMsg;
-
+	List<String> skillsList;
 	@Test(groups = { "Sanity", "Master", "Regression" })
 	public void SalesforceLogin() {
 
@@ -36,13 +36,14 @@ public class CreateTalent extends BaseClass {
 
 	}
 
-	@Test(dependsOnMethods = { "SalesforceLogin" }, groups = { "Sanity", "Master", "Regression" })
-	public void CreateTalent() throws AWTException {
+	@Test(dependsOnMethods = { "SalesforceLogin" },groups = { "Sanity", "Master", "Regression" })
+	public void Talentcreation() throws AWTException {
 		try {
-//			String title = Fp.FindTalentPageTitle();
-//			Assert.assertEquals(title, "Home | Salesforce");
-//			logger.info("Title Validated");
-//			logger.info(p.getProperty("JobTitle"));
+			//logger.info("Talentcreation testcase started");
+			String title = Fp.FindTalentPageTitle();
+			Assert.assertEquals(title, "Home | Salesforce");
+			logger.info("Title Validated");
+			//isClickable(Fp.FindorAddTalent(), 5);
 			scrollToElement(Fp.FindorAddTalent());
 			jsclickElement(Fp.FindorAddTalent());
 			Fp.FirstName(getrandomString(9));
@@ -60,14 +61,14 @@ public class CreateTalent extends BaseClass {
 			isDisplayed(Fp.Save(), 10);
 			Fp.Save().click();
 			Ap.Location(p.getProperty("Location"));
-			processWebElements(Ap.LocSugg(), p.getProperty("Location"));
+			selectAutoSugg(Ap.LocSugg(), p.getProperty("Location"));
 			Ap.Jobtitle(p.getProperty("JobTitle"));
-			processWebElements(Ap.JobSugg(), p.getProperty("JobTitle"));
-			List<String> skillsList = Arrays.asList("java", "python", "selenium");
+			selectAutoSugg(Ap.JobSugg(), p.getProperty("JobTitle"));
+			skillsList = Arrays.asList("java","selenium");
 
 			for (String skill : skillsList) {
 				Ap.Skillinput(skill);
-				processWebElements(Ap.SkillSugg(), skill);
+				selectAutoSugg(Ap.SkillSugg(), skill);
 			}
 			scrollToElement(Ap.Save());
 			Ap.Save().click();
@@ -85,7 +86,7 @@ public class CreateTalent extends BaseClass {
 		logger.info(" Login Test Case Finished");
 	}
 
-	@Test(dependsOnMethods = { "CreateTalent" },groups = { "Sanity", "Master", "Regression" })
+	@Test(dependsOnMethods = { "Talentcreation" },groups = { "Sanity", "Master", "Regression" })
 	public void EditTalent() {
 
 	}

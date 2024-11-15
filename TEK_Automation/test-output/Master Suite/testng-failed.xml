@@ -16,9 +16,10 @@
       <class name="testCases.CreateTalent">
         <methods>
           <include name="teardown"/>
-          <include name="CreateTalent"/>
-          <include name="SalesforceLogin"/>
+          <include name="EditTalent"/>
+          <include name="Talentcreation"/>
           <include name="setup"/>
+          <include name="SalesforceLogin"/>
         </methods>
       </class> <!-- testCases.CreateTalent -->
     </classes>

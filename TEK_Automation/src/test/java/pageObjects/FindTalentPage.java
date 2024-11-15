@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 public class FindTalentPage extends BasePage {
 
 	public FindTalentPage(WebDriver driver) {
-		super(driver);
+		     super(driver);
 		
 	}
 
@@ -58,7 +58,7 @@ public class FindTalentPage extends BasePage {
 	@FindBy(xpath = "(//span[@class='slds-form-element__label slds-m-left_medium'])[1]")
 	private WebElement ResumeDoc;
 
-	@FindBy(xpath = "//span[normalize-space()='Save']")
+	@FindBy(xpath = "//div[@class='slds-col']//span[normalize-space()='Save']")
 	private WebElement Save;
 
 	@FindBy(xpath = "//button[normalize-space()='Add a New Talent']")
@@ -75,6 +75,10 @@ public class FindTalentPage extends BasePage {
 
 	@FindBy(xpath = "//li[contains(@class,'slds-p-left_small')]")
 	private List<WebElement> JobSugg;
+	
+	
+	
+	
 	
 	public void Location(String loc) {
 		 Location.sendKeys(loc);
@@ -151,8 +155,8 @@ public class FindTalentPage extends BasePage {
 		return Save;
 	}
 
-	public void AddNewTalent() {
-		AddNewTalent.click();
+	public WebElement AddNewTalent() {
+		return AddNewTalent;
 
 	}
 

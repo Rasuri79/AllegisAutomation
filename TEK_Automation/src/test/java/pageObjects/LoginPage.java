@@ -19,7 +19,11 @@ public class LoginPage extends BasePage {
 
 	@FindBy(xpath = "//input[@id='Login']")
 	private WebElement Loginbtn;
-
+	
+	@FindBy(xpath = "//span[normalize-space()='AzureADLoad']")
+	private WebElement LoadLogin;
+	
+	
 	public void Username(String user) {
 		// Username.clear();
 		Username.sendKeys(user);
@@ -34,6 +38,9 @@ public class LoginPage extends BasePage {
 		Loginbtn.click();
 	}
 
+	public void LoadLogin() {
+		LoadLogin.click();
+	}
 	public String HomepageTitle() {
 		return driver.getTitle();
 	}
