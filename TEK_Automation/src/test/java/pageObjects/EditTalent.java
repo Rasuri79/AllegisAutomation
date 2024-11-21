@@ -176,7 +176,9 @@ public class EditTalent extends BasePage {
 	public WebElement EditSave() {
 		return EditSave;
 	}
-	
+	public String TLPTitle() {
+		return driver.getTitle();
+	}
 	
 }
 

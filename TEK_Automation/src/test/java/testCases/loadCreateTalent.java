@@ -21,7 +21,8 @@ public class loadCreateTalent extends BaseClass {
 
 	String filepath = "C:\\Users\\rrkumar\\Downloads\\ress_res.pdf";
 	String SuccessMsg;
-	List<String> skillsList;
+	List<String> skillsList = Arrays.asList("java", "selenium");
+	String ContactPage = "Contact | Salesforce";
 
 	@Test(groups = { "Sanity", "Master", "Regression" })
 	public void SalesforceLogin() throws InterruptedException {
@@ -67,7 +68,7 @@ public class loadCreateTalent extends BaseClass {
 			selectAutoSugg(Ap.LocSugg(), p.getProperty("Location"));
 			Ap.Jobtitle(p.getProperty("JobTitle"));
 			selectAutoSugg(Ap.JobSugg(), p.getProperty("JobTitle"));
-			skillsList = Arrays.asList("java", "selenium");
+			
 
 			for (String skill : skillsList) {
 				Ap.Skillinput(skill);
@@ -124,7 +125,8 @@ public class loadCreateTalent extends BaseClass {
 		scrollToElement(Ep.EditSave());
 		jsclickElement(Ep.EditSave());
 		// Ep.EditSave().click();
-
+	    Assert.assertTrue(Ep.TLPTitle().contains(ContactPage), "Page does not contain Contact ");
+	    logger.info(Ep.TLPTitle());
 		} catch (Exception e) {
 			Assert.fail();
 			logger.debug("EditTalent Test Case Failed", e.getMessage());

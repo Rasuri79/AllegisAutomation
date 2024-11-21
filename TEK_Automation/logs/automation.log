@@ -1,20 +1,38 @@
-14:15:22.795 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\rrkumar\git\repository\TEK_Automation\load.xml"
-14:15:23.097 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+13:25:14.716 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\rrkumar\git\repository\TEK_Automation\load.xml"
+13:25:15.100 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
   C:\Users\rrkumar\git\repository\TEK_Automation\load.xml
 
-14:15:27.902 [main] INFO  testCases.loadCreateTalent - SalesforceLogin Test case started 
-14:15:30.627 [main] INFO  testCases.loadCreateTalent - Logged in to connected
-14:15:30.627 [main] INFO  testCases.loadCreateTalent - SalesforceLogin Test case executed 
-14:15:30.652 [main] INFO  testCases.loadCreateTalent - Talentcreation testcase started
-14:16:09.257 [main] INFO  testCases.loadCreateTalent - Element not visible after 5 seconds: [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: (//*[name()='svg'][@class='slds-button__icon slds-button__icon_left'])[3]]
-14:16:14.676 [main] INFO  testCases.loadCreateTalent - 
-14:17:29.197 [main] INFO  testCases.loadCreateTalent - Success!
-14:17:29.197 [main] INFO  testCases.loadCreateTalent -  Talentcreation Test Case Finished
-14:17:29.201 [main] INFO  testCases.loadCreateTalent -  EditTalent test case is started
-14:17:37.419 [main] INFO  testCases.loadCreateTalent - [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: //div[contains(@class,'1-of-4')][1]//div[contains(@class,'1-of-2')][1]//input] has  text 
-14:17:37.523 [main] INFO  testCases.loadCreateTalent - [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: //div[contains(@class,'1-of-4')][1]//div[contains(@class,'1-of-2')][2]//input] has  text 
-14:17:37.791 [main] INFO  testCases.loadCreateTalent - [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: //span[normalize-space()='email']/ancestor::label/following-sibling::input] has  text 
-14:17:37.887 [main] INFO  testCases.loadCreateTalent - [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: //input[@class='search-input']] has  text 
-14:17:37.955 [main] INFO  testCases.loadCreateTalent - [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: //input[contains(@class,'mixedCase search-req-field')]] has  text 
-14:17:39.486 [main] INFO  testCases.loadCreateTalent - [[ChromeDriver: chrome on windows (8b3263695c54939400f9c2fd2ffd3747)] -> xpath: //div[contains(@class,'2')][2]//div[contains(@class,'1')][1]//div[2]//input] has  text 
-14:17:39.994 [main] INFO  testCases.loadCreateTalent -  EditTalent Test Case Finished
+13:25:19.371 [main] INFO  testCases.loadCreateTalent - SalesforceLogin Test case started 
+13:25:21.831 [main] INFO  testCases.loadCreateTalent - Logged in to connected
+13:25:21.832 [main] INFO  testCases.loadCreateTalent - SalesforceLogin Test case executed 
+13:25:21.861 [main] INFO  testCases.loadCreateTalent - Talentcreation testcase started
+13:26:03.768 [main] INFO  testCases.loadCreateTalent - 
+13:27:47.052 [main] INFO  testCases.loadCreateTalent - Success!
+13:27:47.052 [main] INFO  testCases.loadCreateTalent -  Talentcreation Test Case Finished
+13:27:47.057 [main] INFO  testCases.loadCreateTalent -  EditTalent test case is started
+13:27:56.268 [main] INFO  testCases.loadCreateTalent -  has  text 
+13:27:56.358 [main] INFO  testCases.loadCreateTalent -  has  text 
+13:27:56.573 [main] INFO  testCases.loadCreateTalent -  has  text 
+13:27:56.648 [main] INFO  testCases.loadCreateTalent -  has  text 
+13:27:56.724 [main] INFO  testCases.loadCreateTalent -  has  text 
+13:27:58.214 [main] INFO  testCases.loadCreateTalent -  has  text 
+13:27:58.769 [main] INFO  testCases.loadCreateTalent - Ress Ress | Contact | Salesforce
+13:27:58.769 [main] INFO  testCases.loadCreateTalent -  EditTalent Test Case Finished
+13:29:35.287 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\rrkumar\git\repository\TEK_Automation\load.xml"
+13:29:35.606 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\rrkumar\git\repository\TEK_Automation\load.xml
+
+13:29:39.643 [main] INFO  testCases.loadCreateTalent - SalesforceLogin Test case started 
+13:29:42.778 [main] INFO  testCases.loadCreateTalent - Logged in to connected
+13:29:42.778 [main] INFO  testCases.loadCreateTalent - SalesforceLogin Test case executed 
+13:29:42.803 [main] INFO  testCases.loadCreateTalent - Talentcreation testcase started
+13:30:27.782 [main] INFO  testCases.loadCreateTalent - 
+13:31:40.419 [main] INFO  testCases.loadCreateTalent - Success!
+13:31:40.419 [main] INFO  testCases.loadCreateTalent -  Talentcreation Test Case Finished
+13:31:40.424 [main] INFO  testCases.loadCreateTalent -  EditTalent test case is started
+13:31:49.211 [main] INFO  testCases.loadCreateTalent - input has  text 
+13:31:49.293 [main] INFO  testCases.loadCreateTalent - input has  text 
+13:31:49.365 [main] INFO  testCases.loadCreateTalent - input has  text 
+13:31:50.926 [main] INFO  testCases.loadCreateTalent - input has  text 
+13:31:51.446 [main] INFO  testCases.loadCreateTalent - Ress Ress | Contact | Salesforce
+13:31:51.446 [main] INFO  testCases.loadCreateTalent -  EditTalent Test Case Finished

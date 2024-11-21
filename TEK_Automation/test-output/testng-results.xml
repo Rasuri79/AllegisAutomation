@@ -2,7 +2,7 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-15T14:15:23 IST" name="Suite" finished-at="2024-11-15T14:17:40 IST" duration-ms="137207">
+  <suite started-at="2024-11-21T13:29:35 IST" name="Suite" finished-at="2024-11-21T13:31:51 IST" duration-ms="136152">
     <groups>
       <group name="Master">
         <method signature="loadCreateTalent.SalesforceLogin()[pri:0, instance:testCases.loadCreateTalent@530712d]" name="SalesforceLogin" class="testCases.loadCreateTalent"/>
@@ -20,9 +20,9 @@
         <method signature="loadCreateTalent.EditTalent()[pri:0, instance:testCases.loadCreateTalent@530712d]" name="EditTalent" class="testCases.loadCreateTalent"/>
       </group> <!-- Regression -->
     </groups>
-    <test started-at="2024-11-15T14:15:23 IST" name="test" finished-at="2024-11-15T14:17:40 IST" duration-ms="137207">
+    <test started-at="2024-11-21T13:29:35 IST" name="test" finished-at="2024-11-21T13:31:51 IST" duration-ms="136152">
       <class name="testCases.loadCreateTalent">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:testCases.loadCreateTalent@530712d]" started-at="2024-11-15T14:15:23 IST" name="setup" finished-at="2024-11-15T14:15:27 IST" duration-ms="4399" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:testCases.loadCreateTalent@530712d]" started-at="2024-11-21T13:29:36 IST" name="setup" finished-at="2024-11-21T13:29:39 IST" duration-ms="3573" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -33,19 +33,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="SalesforceLogin()[pri:0, instance:testCases.loadCreateTalent@530712d]" started-at="2024-11-15T14:15:27 IST" name="SalesforceLogin" finished-at="2024-11-15T14:15:30 IST" duration-ms="2730" status="PASS">
+        <test-method signature="SalesforceLogin()[pri:0, instance:testCases.loadCreateTalent@530712d]" started-at="2024-11-21T13:29:39 IST" name="SalesforceLogin" finished-at="2024-11-21T13:29:42 IST" duration-ms="3140" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SalesforceLogin -->
-        <test-method signature="Talentcreation()[pri:0, instance:testCases.loadCreateTalent@530712d]" started-at="2024-11-15T14:15:30 IST" name="Talentcreation" finished-at="2024-11-15T14:17:29 IST" depends-on-methods="testCases.loadCreateTalent.SalesforceLogin" duration-ms="118546" status="PASS">
+        <test-method signature="Talentcreation()[pri:0, instance:testCases.loadCreateTalent@530712d]" started-at="2024-11-21T13:29:42 IST" name="Talentcreation" finished-at="2024-11-21T13:31:40 IST" depends-on-methods="testCases.loadCreateTalent.SalesforceLogin" duration-ms="117618" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Talentcreation -->
-        <test-method signature="EditTalent()[pri:0, instance:testCases.loadCreateTalent@530712d]" started-at="2024-11-15T14:17:29 IST" name="EditTalent" finished-at="2024-11-15T14:17:39 IST" depends-on-methods="testCases.loadCreateTalent.Talentcreation" duration-ms="10794" status="PASS">
+        <test-method signature="EditTalent()[pri:0, instance:testCases.loadCreateTalent@530712d]" started-at="2024-11-21T13:31:40 IST" name="EditTalent" finished-at="2024-11-21T13:31:51 IST" depends-on-methods="testCases.loadCreateTalent.Talentcreation" duration-ms="11023" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EditTalent -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testCases.loadCreateTalent@530712d]" started-at="2024-11-15T14:17:39 IST" name="teardown" finished-at="2024-11-15T14:17:40 IST" duration-ms="314" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testCases.loadCreateTalent@530712d]" started-at="2024-11-21T13:31:51 IST" name="teardown" finished-at="2024-11-21T13:31:51 IST" duration-ms="316" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

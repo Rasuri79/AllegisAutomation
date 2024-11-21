@@ -301,7 +301,7 @@ public class BaseClass {
 //	    	element.clear();  // Clears the input field
 //	    	element.sendKeys(text);  // Send the new text
 
-			logger.info(element + " has  text ");
+			logger.info(element.getTagName() + " has  text ");
 		}
 	}
 
